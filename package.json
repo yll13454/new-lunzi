@@ -1,7 +1,7 @@
 {
   "name": "yll-lunzi",
   "version": "1.0.0",
-  "description": "yll",
+  "description": "这是UI框架 VUE",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/yll13454/new-lunzi/issues"
   },
-  "homepage": "https://github.com/yll13454/new-lunzi#readme"
+  "homepage": "https://github.com/yll13454/new-lunzi#readme",
+  "dependencies": {
+    "vue": "^2.6.10"
+  }
 }
