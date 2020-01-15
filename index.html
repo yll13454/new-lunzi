@@ -8,7 +8,7 @@
     <style>
  *{margin:0;padding:0;box-sizing:border-box;}
 html{--button-height:32px;--font-size:14px;--button-bg:white;--button-active-bg:#eee;--border-radius:4px;--color:#333;--border-color:#999;--border-color-hover:#666;}
-#app{display:inline-flex;}
+#app{display:inline-flex;margin:12px}
     </style>
     <title>UI 轮子</title>
 
@@ -18,7 +18,11 @@ html{--button-height:32px;--font-size:14px;--button-bg:white;--button-active-bg:
     <div id="app">
         <g-button :loading="loading2" @click="loading2 = !loading2">按钮</g-button>
         <g-button icontype="setting" iconposition="right" :loading="loading1" @click="loading1 = !loading1">按钮</g-button>
-        {{message}}
+        <g-button-group>
+            <g-button icontype='left'>上一页</g-button>
+            <g-button>更多</g-button>
+            <g-button icontype='right' iconposition="right">下一页</g-button>
+        </g-button-group>
     </div>
     <script src="./src/app.js"></script>
     <script src="//at.alicdn.com/t/font_1537907_02tcd56txtrb.js"></script>

@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import gbutton from './button.vue'
+import gbuttongroup from './button-group.vue'
 
 new Vue({
     el:'#app',
@@ -10,5 +11,6 @@ new Vue({
     },
     components:{
         'g-button':gbutton,
+        'g-button-group':gbuttongroup,
     }
 })

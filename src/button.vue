@@ -1,5 +1,4 @@
 <template>
-    <div>
         <button class="g-button" :class="`icon-${iconposition}`" @click="$emit('click')">
             <div class="content">
                 <slot></slot>
@@ -7,14 +6,12 @@
             <g-icon class="icon" :name="icontype" v-if="icontype && !loading" /></g-icon>
             <g-icon class="icon loading" name="loading" v-if="loading" /></g-icon>
         </button>
-    </div>
 </template>
 
 <script>
 import gicon from "./g-icon";
 export default {
-//   props: ["icontype","iconposition"],
-  props:{
+    props:{
       icontype:{},
       loading:{
           type:Boolean,
@@ -24,7 +21,7 @@ export default {
           type:String,
           default:'left',
           validator(value){
-              return value === 'left' && value === 'right'
+              return value === 'left' || value === 'right'
           }
       }
   },
@@ -41,7 +38,7 @@ export default {
 @keyframes spin{0%{transform:rotate(0deg);}
 100%{transform:rotate(360deg);}
 }
-.g-button{font-size:var(--font-size);height:var(--button-height);padding:0 1em;border-radius:var(--border-radius);background:var(--button-bg);display:inline-flex;justify-content:center;align-items:center;vertical-align: middle;
+.g-button{font-size:var(--font-size);height:var(--button-height);padding:0 1em;border-radius:var(--border-radius);background:var(--button-bg);display:inline-flex;justify-content:center;align-items:center;vertical-align: middle;border:1px solid black;
 &:hover{border-color:var(--border-color-hover);}
 &:active{background-color:var(--border-active-bg);}
 &:focus{outline:none;}
