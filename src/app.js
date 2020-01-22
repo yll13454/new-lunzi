@@ -57,7 +57,7 @@ const expect = chai.expect;
     const vm = new Constructor({
         propsData:{
             icontype:'setting',
-            iconposition:'right'
+            iconPosition:'right'
         }
     })
     vm.$mount(div)
