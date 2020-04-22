@@ -1,9 +1,7 @@
 <template>
-
         <svg class="g-icon" aria-hidden="true">
                 <use :xlink:href="`#i-${name}`"></use>
         </svg>
-
 </template>
 
 <script>

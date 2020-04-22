@@ -8,7 +8,8 @@
     <style>
  *{margin:0;padding:0;box-sizing:border-box;}
 html{--button-height:32px;--font-size:14px;--button-bg:white;--button-active-bg:#eee;--border-radius:4px;--color:#333;--border-color:#999;--border-color-hover:#666;}
-#app{display:inline-flex;margin:12px}
+#app{margin:12px;}
+
     </style>
     <title>UI 轮子</title>
 
@@ -23,10 +24,14 @@ html{--button-height:32px;--font-size:14px;--button-bg:white;--button-active-bg:
             <g-button>更多</g-button>
             <g-button icontype='right' iconposition="right">下一页</g-button>
         </g-button-group>
+        <g-input disabled ></g-input>
+        <g-input readonly ></g-input>
+        <g-input error="这里不能为空！" ></g-input>
+        <g-input></g-input>
     </div>
-    <div id="test"></div>
+    <!-- <div id="test"></div> -->
     <script src="./src/app.js"></script>
-    <script src="//at.alicdn.com/t/font_1537907_02tcd56txtrb.js"></script>
+    <script src="./src/svg.js"></script>
 </body>
 
 </html>
