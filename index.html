@@ -24,10 +24,12 @@ html{--button-height:32px;--font-size:14px;--button-bg:white;--button-active-bg:
             <g-button>更多</g-button>
             <g-button icontype='right' iconposition="right">下一页</g-button>
         </g-button-group>
-        <g-input disabled ></g-input>
-        <g-input readonly ></g-input>
-        <g-input error="这里不能为空！" ></g-input>
-        <g-input></g-input>
+        <!-- <g-input disabled value="请输入" ></g-input>
+        <g-input readonly value="请输入" ></g-input>
+        <g-input error="这里不能为空！" value="请输入" ></g-input> -->
+        <g-input value="请输入" @change="inputChange" ></g-input>
+        <g-input v-model="message2" ></g-input>
+        {{message2}}
     </div>
     <!-- <div id="test"></div> -->
     <script src="./src/app.js"></script>

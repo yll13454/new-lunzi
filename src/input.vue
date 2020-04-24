@@ -4,7 +4,10 @@
         :value="value" 
         :disabled="disabled" 
         :readonly="readonly" 
-        placeholder="请输入"  >
+        @change="$emit('change',$event.target.value)"
+        @input="$emit('input',$event.target.value)"
+        @focus="$emit('focus',$event.target.value)"
+        @blur="$emit('blur',$event.target.value)" >
         <template v-if="error">
             <icon name="error" class="icon-error" ></icon>
             <span class="errorMassage">{{error}}</span>
