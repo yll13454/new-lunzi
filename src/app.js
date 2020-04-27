@@ -2,6 +2,8 @@ import Vue from 'vue'
 import gbutton from './button.vue'
 import gbuttongroup from './button-group.vue'
 import ginput from './input'
+import Row from './row'
+import Col from './col'
 
 new Vue({
     el:'#app',
@@ -14,7 +16,9 @@ new Vue({
     components:{
         'g-button':gbutton,
         'g-button-group':gbuttongroup,
-        'g-input':ginput
+        'g-input':ginput,
+        'g-row':Row,
+        'g-col':Col
     },
     created(){
         setTimeout(() => {
