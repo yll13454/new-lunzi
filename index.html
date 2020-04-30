@@ -31,33 +31,10 @@ html{--button-height:32px;--font-size:14px;--button-bg:white;--button-active-bg:
         <g-input v-model="message2" ></g-input>
         {{message2}}
         <div style="margin-top:12px" >
-            <g-row>
-                <g-col>1</g-col>
-                <g-col>2</g-col>
-                <g-col>3</g-col>
-            </g-row>
-            <g-row>
-                <g-col>1</g-col>
-                <g-col>2</g-col>
-                <g-col>3</g-col>
-                <g-col>4</g-col>
-            </g-row>
-            <g-row>
-                <g-col span="2" >1</g-col>
-                <g-col span="22" >2</g-col>
-            </g-row>
-            <g-row>
-                <g-col span="8" >1</g-col>
-                <g-col span="12" >2</g-col>
-            </g-row>
-            <g-row>
-                <g-col span="6" offset="6" >1</g-col>
-                <g-col span="12" >2</g-col>
-            </g-row>
-            <g-row gutter="20" align="right" >
-                <g-col span="6" >1</g-col>
-                <g-col span="12" >2</g-col>
-                <g-col span="6" >1</g-col>
+            <g-row gutter="20" >
+                <g-col span="1" :ipad="{span:8,offset:2}" >1</g-col>
+                <g-col span="12"  offset="2" >2</g-col>
+                <g-col span="11" >1</g-col>
             </g-row>
         </div>
     </div>
