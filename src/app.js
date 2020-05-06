@@ -4,6 +4,12 @@ import gbuttongroup from './button-group.vue'
 import ginput from './input'
 import Row from './row'
 import Col from './col'
+import glayout from './layout'
+import gheader from './header'
+import gcontent from './content'
+import gfooter from './footer'
+import gaside from './aside'
+ 
 
 new Vue({
     el:'#app',
@@ -18,19 +24,18 @@ new Vue({
         'g-button-group':gbuttongroup,
         'g-input':ginput,
         'g-row':Row,
-        'g-col':Col
+        'g-col':Col,
+        'g-layout':glayout,
+        'g-header':gheader,
+        'g-content':gcontent,
+        'g-footer':gfooter,
+        'g-aside':gaside,
     },
     created(){
-        setTimeout(() => {
-            let event = new Event('change');
-            let inputElement = this.$el.querySelector('input');
-            inputElement.dispatchEvent(event);
-        }, 3000);
+
     },
     methods: {
-        inputChange(e){
-            console.log(e);
-        }
+
     },
 })
 

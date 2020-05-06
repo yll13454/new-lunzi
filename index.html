@@ -8,35 +8,27 @@
     <style>
  *{margin:0;padding:0;box-sizing:border-box;}
 html{--button-height:32px;--font-size:14px;--button-bg:white;--button-active-bg:#eee;--border-radius:4px;--color:#333;--border-color:#999;--border-color-hover:#666;}
-#app{margin:12px;}
 
+.dome{
+    border:1px solid black;
+    min-height: 100px;
+    min-width: 100px;
+}
     </style>
     <title>UI 轮子</title>
 
 </head>
 
 <body>
-    <div id="app">
-        <g-button :loading="loading2" @click="loading2 = !loading2">按钮</g-button>
-        <g-button icontype="setting" iconposition="right" :loading="loading1" @click="loading1 = !loading1">按钮</g-button>
-        <g-button-group>
-            <g-button icontype='left'>上一页</g-button>
-            <g-button>更多</g-button>
-            <g-button icontype='right' iconposition="right">下一页</g-button>
-        </g-button-group>
-        <!-- <g-input disabled value="请输入" ></g-input>
-        <g-input readonly value="请输入" ></g-input>
-        <g-input error="这里不能为空！" value="请输入" ></g-input> -->
-        <g-input value="请输入" @change="inputChange" ></g-input>
-        <g-input v-model="message2" ></g-input>
-        {{message2}}
-        <div style="margin-top:12px" >
-            <g-row gutter="20" >
-                <g-col span="1" :ipad="{span:8,offset:2}" >1</g-col>
-                <g-col span="12"  offset="2" >2</g-col>
-                <g-col span="11" >1</g-col>
-            </g-row>
-        </div>
+    <div id="app">  
+        <g-layout style="height:100vh" >
+            <g-header class="dome" >1</g-header>
+            <g-layout>
+                <g-aside class="dome">2</g-aside>
+                <g-content class="dome">3</g-content>
+            </g-layout>
+            <g-footer class="dome" >4</g-footer>
+        </g-layout>
     </div>
     <!-- <div id="test"></div> -->
     <script src="./src/app.js"></script>
