@@ -24,7 +24,9 @@ html{--button-height:32px;--font-size:14px;--button-bg:white;--button-active-bg:
         <g-layout style="height:100vh" >
             <g-header class="dome" >1</g-header>
             <g-layout>
-                <g-aside class="dome">2</g-aside>
+                <g-aside class="dome">2
+                    <button @click="clickme" >点我</button>
+                </g-aside>
                 <g-content class="dome">3</g-content>
             </g-layout>
             <g-footer class="dome" >4</g-footer>

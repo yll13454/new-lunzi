@@ -9,6 +9,9 @@ import gheader from './header'
 import gcontent from './content'
 import gfooter from './footer'
 import gaside from './aside'
+import plugin from './plugin'
+
+Vue.use(plugin)
  
 
 new Vue({
@@ -36,6 +39,19 @@ new Vue({
     },
     methods: {
 
+    },
+    methods: {
+        clickme(){
+            this.$toast('dianwo',{
+                closeButton : {
+                    text:'我是傻帽',
+                    callback(toast){
+                        toast.log();
+                        console.log('zhidaol');
+                    }
+                }
+            })
+        }
     },
 })
 
