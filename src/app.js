@@ -42,14 +42,8 @@ new Vue({
     },
     methods: {
         clickme(){
-            this.$toast('dianwo',{
-                closeButton : {
-                    text:'我是傻帽',
-                    callback(toast){
-                        toast.log();
-                        console.log('zhidaol');
-                    }
-                }
+            this.$toast('我是最棒的！我是最棒的！我是最棒的！我是最棒的！我是最棒的！我是最棒的！我是最棒的！',{
+                enableHtml:false
             })
         }
     },

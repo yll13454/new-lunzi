@@ -1,9 +1,10 @@
 <template>
     <div class="toast">
-        <slot></slot>
+        <slot v-if="!enableHtml" ></slot>
+        <div v-else v-html="$slots.default[0]" class="aaa" ></div>
         <div class="line" ></div>
-        <div class="close" v-if="closeButton" @click="onClicClose" >
-            {{closeButton.text}}
+        <div class="close" v-if="closeButton" @click="onClicClose" v-html='closeButton.text' >
+
         </div>
     </div>
 </template>
@@ -29,6 +30,10 @@
                         }
                     }
                 }
+            },
+            enableHtml:{
+                type:Boolean,
+                deafault:false
             }
         },
         mounted() {
@@ -41,13 +46,11 @@
         methods: {
             close(){
                 console.log('weqeq');
-                
                 this.$el.remove()
                 this.$destroy()
             },
             log(){
                 console.log('打印我');
-                
             },
             onClicClose(){ 
                 this.close()
@@ -76,7 +79,7 @@
     border-radius: 4px;
 }
 .close{
-
+    flex-shrink: 0;
 }
 .line{
     height:100%;
