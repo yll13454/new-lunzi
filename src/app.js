@@ -42,8 +42,8 @@ new Vue({
     },
     methods: {
         clickme(){
-            this.$toast('我是最棒的！我是最棒的！我是最棒的！我是最棒的！我是最棒的！我是最棒的！我是最棒的！',{
-                enableHtml:false
+            this.$toast('我是最棒我是最棒我是最棒我是最棒我是最棒我是最棒我是最棒我是最棒我是最棒我是最棒我是最棒我是最棒我是最棒',{
+                enableHtml:false,
             })
         }
     },

@@ -11,6 +11,7 @@ export default {
                     enableHtml:toastOptions.enableHtml
                 }
             })
+            
             toast.$slots.default = [message]
             toast.$mount()
             document.body.appendChild(toast.$el)
