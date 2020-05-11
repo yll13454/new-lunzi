@@ -8,7 +8,8 @@ export default {
             let toast = new Constructor({
                 propsData:{
                     closeButton:toastOptions.closeButton,
-                    enableHtml:toastOptions.enableHtml
+                    enableHtml:toastOptions.enableHtml,
+                    position:toastOptions.position
                 }
             })
             

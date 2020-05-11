@@ -1,5 +1,5 @@
 <template>
-    <div class="toast" ref="wrapper" >
+    <div class="toast" ref="wrapper" :class="positionClass" >
         <div class="message">
             <slot v-if="!enableHtml" ></slot>
             <div v-else v-html="$slots.default[0]" class="aaa" ></div>
@@ -36,6 +36,13 @@
             enableHtml:{
                 type:Boolean,
                 deafault:false
+            },
+            position:{
+                type:String,
+                default:'top',
+                validator(value){
+                    return ['top','bottom','middle'].indexOf(value)>=0
+                }
             }
         },
         mounted() {
@@ -49,6 +56,13 @@
                 console.log(this.$refs.wrapper.getBoundingClientRect().height);
                 
             })
+        },
+        computed: {
+            positionClass() {
+                return {
+                    [`position-${this.position}`]:true
+                }
+            },
         },
         methods: {
             close(){
@@ -73,9 +87,7 @@
 .toast{
     position: fixed;
     display: flex;
-    top:0;
     left:50%;
-    transform: translateX(-50%);
     color:white;
     min-height:40px;
     align-items: center;
@@ -84,16 +96,29 @@
     background: rgba(0,0,0,0.74);
     box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.50);
     border-radius: 4px;
+    &.position-top{
+        top:0;
+        transform: translateX(-50%);
+    }
+    &.position-middle{
+        top:50%;
+        transform: translate(-50%,-50%);
+    }
+    &.position-bottom{
+        bottom:0;
+        transform: translateX(-50%);
+    }
+    .close{
+        flex-shrink: 0;
+    }
+    .message{
+        padding:6px 0;
+    }
+    .line{
+        height:100%;
+        border-left:1px solid red;
+        margin:0 16px;
+    }
 }
-.close{
-    flex-shrink: 0;
-}
-.message{
-    padding:6px 0;
-}
-.line{
-    height:100%;
-    border-left:1px solid red;
-    margin:0 16px;
-}
+
 </style>
