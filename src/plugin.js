@@ -1,22 +1,33 @@
 import Toast from './toast'
 
+let currentCoast
 export default {
     install(Vue,options){
-        Vue.prototype.$toast = function (message,toastOptions) {
+        Vue.prototype.$toast = function (message,taostOptions) {
             
-            let Constructor = Vue.extend(Toast);
-            let toast = new Constructor({
-                propsData:{
-                    closeButton:toastOptions.closeButton,
-                    enableHtml:toastOptions.enableHtml,
-                    position:toastOptions.position
+            if(currentCoast){
+                currentCoast.close()
+            }
+            currentCoast = createCoast(
+                {
+                    Vue,
+                    propsData : taostOptions,
+                    message,
+                    onClose(){
+                        currentCoast = undefined;
+                    }
                 }
-            })
-            
-            toast.$slots.default = [message]
-            toast.$mount()
-            document.body.appendChild(toast.$el)
-
+            )
         }
     }
+}
+
+function createCoast({Vue,propsData,message,onClose}) {
+    let Constructor = Vue.extend(Toast);
+    let toast = new Constructor({propsData})
+    toast.$slots.default = [message]
+    toast.$mount()
+    toast.$on('close',onClose)
+    document.body.appendChild(toast.$el)
+    return toast
 }

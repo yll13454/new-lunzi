@@ -44,7 +44,7 @@ new Vue({
         clickme(){
             this.$toast('我是最棒！',{
                 enableHtml:false,
-                position:'middle'
+                position:'bottom'
             })
         }
     },

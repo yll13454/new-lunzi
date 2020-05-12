@@ -48,16 +48,8 @@
             }
         },
         mounted() {
-            if(this.autoClose){
-                setTimeout(() => {
-                    this.close()
-                }, this.autoCloseDelay*1000);
-            }
-            this.$nextTick(()=>{
-                this.$refs.line.style.height=`${this.$refs.wrapper.getBoundingClientRect().height}px`
-                console.log(this.$refs.wrapper.getBoundingClientRect().height);
-                
-            })
+            this.execAutoClose();
+            this.updateStyles();
         },
         computed: {
             positionClass() {
@@ -67,9 +59,22 @@
             },
         },
         methods: {
+            execAutoClose(){
+                if(this.autoClose){
+                    setTimeout(() => {
+                        this.close()
+                    }, this.autoCloseDelay*1000);
+                }
+            },
+            updateStyles(){
+                this.$nextTick(()=>{
+                    this.$refs.line.style.height=`${this.$refs.wrapper.getBoundingClientRect().height}px`
+                    // console.log(this.$refs.wrapper.getBoundingClientRect().height);
+                })
+            },
             close(){
-                console.log('weqeq');
                 this.$el.remove()
+                this.$emit('close')
                 this.$destroy()
             },
             log(){
@@ -107,6 +112,8 @@
         top:0;
         .toast{
             animation:slide-down 300ms;
+            border-bottom-left-radius:4px;
+            border-bottom-right-radius:4px;
         }
     }
     &.position-middle{
@@ -114,12 +121,15 @@
         transform: translate(-50%,-50%);
         .toast{
             animation:fade-in 300ms;
+            border-radius: 4px;
         }
     }
     &.position-bottom{
         bottom:0;
         .toast{
             animation:slide-up 300ms;
+            border-top-left-radius:4px;
+            border-top-right-radius:4px;
         }
     }
 }
@@ -133,7 +143,6 @@
     font-size: 14px;
     background: rgba(0,0,0,0.74);
     box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.50);
-    border-radius: 4px;
     .close{
         flex-shrink: 0;
     }
