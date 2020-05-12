@@ -10,7 +10,7 @@ const expect = chai.expect;
      it('存在.', () => {
          expect(Row).to.be.ok
      })
-     it('可以接收gutter属性', () => {
+     it('可以接收gutter属性', (done) => {
         Vue.component('g-row', Row)
     Vue.component('g-col', Col)
     const div = document.createElement('div')
