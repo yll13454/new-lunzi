@@ -1,12 +1,14 @@
 <template>
-    <div class="toast" ref="wrapper" :class="positionClass" >
-        <div class="message">
-            <slot v-if="!enableHtml" ></slot>
-            <div v-else v-html="$slots.default[0]" class="aaa" ></div>
-        </div>
-        <div class="line" ref="line" ></div>
-        <div class="close" v-if="closeButton" @click="onClicClose" >
-            {{closeButton.text}}
+    <div class="wrapper" :class="positionClass" >
+        <div class="toast" ref="wrapper" >
+            <div class="message">
+                <slot v-if="!enableHtml" ></slot>
+                <div v-else v-html="$slots.default[0]" class="aaa" ></div>
+            </div>
+            <div class="line" ref="line" ></div>
+            <div class="close" v-if="closeButton" @click="onClicClose" >
+                {{closeButton.text}}
+            </div>
         </div>
     </div>
 </template>
@@ -84,8 +86,44 @@
 </script>
 
 <style lang="scss" scoped>
-.toast{
+@keyframes fade-in{
+    0%{opacity:0;}
+    100%{opacity:1;}
+}
+@keyframes slide-down{
+    0%{opacity:0;transform:translateY(-100%)}
+    100%{opacity:1;transform:translateY(0%)}
+}
+@keyframes slide-up{
+    0%{opacity:0;transform:translateY(100%)}
+    100%{opacity:1;transform:translateY(0%)}
+}
+
+.wrapper{
     position: fixed;
+    left:50%;
+    transform: translateX(-50%);
+    &.position-top{
+        top:0;
+        .toast{
+            animation:slide-down 300ms;
+        }
+    }
+    &.position-middle{
+        top:50%;
+        transform: translate(-50%,-50%);
+        .toast{
+            animation:fade-in 300ms;
+        }
+    }
+    &.position-bottom{
+        bottom:0;
+        .toast{
+            animation:slide-up 300ms;
+        }
+    }
+}
+.toast{
     display: flex;
     left:50%;
     color:white;
@@ -96,18 +134,6 @@
     background: rgba(0,0,0,0.74);
     box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.50);
     border-radius: 4px;
-    &.position-top{
-        top:0;
-        transform: translateX(-50%);
-    }
-    &.position-middle{
-        top:50%;
-        transform: translate(-50%,-50%);
-    }
-    &.position-bottom{
-        bottom:0;
-        transform: translateX(-50%);
-    }
     .close{
         flex-shrink: 0;
     }
