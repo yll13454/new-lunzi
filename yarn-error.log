@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add h
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add react
 
 PATH: 
   C:\Program Files\nodejs\node_modules\npm\node_modules\npm-lifecycle\node-gyp-bin;C:\Users\Administrator.SC-201809221142\Desktop\yll-lunzi\node_modules\.bin;目录的绝对路径;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Administrator.SC-201809221142\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files\Microsoft VS Code\bin;C:\Go\bin;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Program Files (x86)\Yarn\bin;C:\Program Files\nodejs;C:\Users\Administrator.SC-201809221142\AppData\Local\Programs\Python\Python37-32\Scripts;C:\Users\Administrator.SC-201809221142\AppData\Local\Programs\Python\Python37-32;C:\Users\Administrator.SC-201809221142\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator.SC-201809221142\go\bin;C:\Users\Administrator.SC-201809221142\AppData\Local\Yarn\bin;C:\Users\Administrator.SC-201809221142\AppData\Roaming\npm;C:\Program Files\MongoDB\Server\4.2\bin
@@ -14,7 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: ENOENT: no such file or directory, copyfile 'C:\Users\Administrator.SC-201809221142\AppData\Local\Yarn\Cache\v4\npm-is-binary-path-1.0.1-75f16642b480f187a711c814161fd3a4a7655898\node_modules\is-binary-path\license' -> 'C:\Users\Administrator.SC-201809221142\Desktop\yll-lunzi\node_modules\@parcel\watcher\node_modules\is-binary-path\license'
+  Error: ENOENT: no such file or directory, copyfile 'C:\Users\Administrator.SC-201809221142\AppData\Local\Yarn\Cache\v4\npm-binary-extensions-1.13.1-598afe54755b2868a5330d2aff9d4ebb53209b65\node_modules\binary-extensions\binary-extensions.json' -> 'C:\Users\Administrator.SC-201809221142\Desktop\yll-lunzi\node_modules\@parcel\watcher\node_modules\binary-extensions\binary-extensions.json'
 
 npm manifest: 
   {

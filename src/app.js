@@ -10,6 +10,12 @@ import gcontent from './content'
 import gfooter from './footer'
 import gaside from './aside'
 import plugin from './plugin'
+import gtabs from './tabs'
+import gtabshead from './tabs-head'
+import gtabsbody from './tabs-body'
+import gtabsitem from './tabs-item'
+import gtabspane from './tabs-pane'
+import gicon from './g-icon'
 
 Vue.use(plugin)
  
@@ -17,10 +23,7 @@ Vue.use(plugin)
 new Vue({
     el:'#app',
     data: {
-        message:'hi',
-        loading1:false,
-        loading2:false,
-        message2:''
+        selectedTab:'sports'
     },
     components:{
         'g-button':gbutton,
@@ -33,12 +36,15 @@ new Vue({
         'g-content':gcontent,
         'g-footer':gfooter,
         'g-aside':gaside,
+        'g-tabs-head':gtabshead,
+        'g-tabs-body':gtabsbody,
+        'g-tabs-item':gtabsitem,
+        'g-tabs-pane':gtabspane,
+        'g-tabs':gtabs,
+        'g-icon':gicon
     },
     created(){
-
-    },
-    methods: {
-
+        
     },
     methods: {
         clickme(){
@@ -46,6 +52,9 @@ new Vue({
                 enableHtml:false,
                 position:'bottom'
             })
+        },
+        yyy(){
+
         }
     },
 })
