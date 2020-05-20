@@ -16,6 +16,7 @@ import gtabsbody from './tabs-body'
 import gtabsitem from './tabs-item'
 import gtabspane from './tabs-pane'
 import gicon from './g-icon'
+import gpopover from './popover'
 
 Vue.use(plugin)
  
@@ -41,7 +42,8 @@ new Vue({
         'g-tabs-item':gtabsitem,
         'g-tabs-pane':gtabspane,
         'g-tabs':gtabs,
-        'g-icon':gicon
+        'g-icon':gicon,
+        'g-popover':gpopover
     },
     created(){
         

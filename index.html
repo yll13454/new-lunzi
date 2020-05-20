@@ -11,8 +11,9 @@ html{--button-height:32px;--font-size:14px;--button-bg:white;--button-active-bg:
 
 .dome{
     border:1px solid black;
-    min-height: 100px;
-    min-width: 100px;
+    height: 100px;
+    width: 100px;
+    margin: 200px;
 }
     </style>
     <title>UI 轮子</title>
@@ -21,33 +22,14 @@ html{--button-height:32px;--font-size:14px;--button-bg:white;--button-active-bg:
 
 <body>
     <div id="app">  
-        <g-tabs :selected.sync="selectedTab" @update:selected="yyy">
-            <g-tabs-head>
-                <template slot="actions">
-                  <button>设置</button>
-                </template>
-                <g-tabs-item name="woman" disabled>
-                  <g-icon name="setting"></g-icon>美女
-                </g-tabs-item>
-                <g-tabs-item name="finance">
-                  财经
-                </g-tabs-item>
-                <g-tabs-item name="sports">
-                  体育
-                </g-tabs-item>
-            </g-tabs-head>
-            <g-tabs-body>
-                <g-tabs-pane name="woman">
-                  美女相关资讯
-                </g-tabs-pane>
-                <g-tabs-pane name="finance">
-                  财经相关资讯
-                </g-tabs-pane>
-                <g-tabs-pane name="sports">
-                  体育相关资讯
-                </g-tabs-pane>
-            </g-tabs-body>
-        </g-tabs>
+        <g-popover class="dome" >
+            <button>点我</button>
+            <template slot="content" >
+                <div>
+                    popover内容
+                </div>
+            </template>
+        </g-popover>
     </div>
     <!-- <div id="test"></div> -->
     <script src="./src/app.js"></script>

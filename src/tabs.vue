@@ -32,6 +32,9 @@ import Vue from 'vue'
             }
         },
         mounted() {
+            if (this.$children === 0) {
+                console && console.warn && console.warn('子组件应该是tabs-head')
+            }
             this.$children.forEach(vm=>{
                 if(vm.$options.name === 'LunziTabsHead'){
                     vm.$children.forEach(childrenvm=>{
